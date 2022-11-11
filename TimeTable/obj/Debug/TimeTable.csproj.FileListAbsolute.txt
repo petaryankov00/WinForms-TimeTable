@@ -1,0 +1,15 @@
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\bin\Debug\TimeTable.exe.config
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\bin\Debug\TimeTable.exe
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\bin\Debug\TimeTable.pdb
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.LoginForm.resources
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.Properties.Resources.resources
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.exe
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.pdb
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.RegisterForm.resources
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.Employees.AddEmployeeForm.resources
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.Employees.EmployeeViewForm.resources
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.Projects.AddProjectForm.resources
+C:\Users\Administrator\source\repos\TimeTable\TimeTable\obj\Debug\TimeTable.Projects.ProjectViewForm.resources
