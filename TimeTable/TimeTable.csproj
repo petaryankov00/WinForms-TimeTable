@@ -149,5 +149,8 @@
   <ItemGroup>
     <Folder Include="Config\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Best-employee-management-system.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
