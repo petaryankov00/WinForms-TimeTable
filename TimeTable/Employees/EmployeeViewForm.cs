@@ -23,5 +23,10 @@ namespace TimeTable.Employees
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
         }
+
+        private void EmployeeViewForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

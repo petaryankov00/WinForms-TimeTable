@@ -31,17 +31,5 @@ namespace TimeTable.Employees
         {
 
         }
-
-        private void UploadPictureButton_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png" })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                   //display image in picture box 
-                    pictureBox1.Image = new Bitmap(ofd.FileName);
-                }
-            }
-        }
     }
 }
