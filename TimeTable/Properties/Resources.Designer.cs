@@ -63,6 +63,16 @@ namespace TimeTable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Best_employee_management_system {
+            get {
+                object obj = ResourceManager.GetObject("Best-employee-management-system", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_235_2351000_login_icon_png_transparent_png {
             get {
                 object obj = ResourceManager.GetObject("rsz_235-2351000_login-icon-png-transparent-png", resourceCulture);
