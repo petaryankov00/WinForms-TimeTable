@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employees\AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employees\AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\AddWorkedTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\AddWorkedTimeForm.Designer.cs">
+      <DependentUpon>AddWorkedTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Employees\EmployeeViewForm.cs">
       <SubType>Form</SubType>
@@ -84,8 +96,14 @@
     <Compile Include="Identity\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Common\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employees\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\AddWorkedTimeForm.resx">
+      <DependentUpon>AddWorkedTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employees\EmployeeViewForm.resx">
       <DependentUpon>EmployeeViewForm.cs</DependentUpon>
@@ -128,6 +146,8 @@
   <ItemGroup>
     <None Include="Resources\rsz_235-2351000_login-icon-png-transparent-png.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

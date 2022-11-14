@@ -16,5 +16,12 @@ namespace TimeTable.Employees
         {
             InitializeComponent();
         }
+
+        private void AddWorkedTimeButton_Click(object sender, EventArgs e)
+        {
+            var childForm = new AddWorkedTimeForm();
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+            childForm.Show();
+        }
     }
 }

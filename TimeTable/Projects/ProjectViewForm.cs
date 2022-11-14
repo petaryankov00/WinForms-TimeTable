@@ -16,5 +16,10 @@ namespace TimeTable.Projects
         {
             InitializeComponent();
         }
+
+        private void ProjectViewForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
