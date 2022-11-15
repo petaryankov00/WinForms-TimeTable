@@ -57,8 +57,15 @@ namespace TimeTable.Common
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new LoginForm();
-            this.ShowForm(form);
+            if (this.loginToolStripMenuItem.Text == "Login")
+            {
+                var form = new LoginForm(this);
+                this.ShowForm(form);
+            }
+            else
+            {
+                this.SetMenu(false);
+            }
         }
 
         private void registerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,6 +83,27 @@ namespace TimeTable.Common
         {
             var form = new EmployeeViewForm();
             this.ShowForm(form);
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+            this.SetMenu(false);
+        }
+
+        public void SetMenu(bool isEnabled)
+        {
+            this.employeesToolStripMenuItem.Enabled = isEnabled;
+            this.projectsToolStripMenuItem.Enabled = isEnabled;
+            if (isEnabled)
+            {
+                this.loginToolStripMenuItem.Text = "Logout";
+                this.registerToolStripMenuItem.Visible = false;
+            }
+            else
+            {
+                this.loginToolStripMenuItem.Text = "Login";
+                this.registerToolStripMenuItem.Visible = true;
+            }
         }
     }
 }

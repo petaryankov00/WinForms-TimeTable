@@ -52,8 +52,8 @@ namespace TimeTable.Common
             this.projectsToolStripMenuItem});
             this.Home.Location = new System.Drawing.Point(0, 0);
             this.Home.Name = "Home";
-            this.Home.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.Home.Size = new System.Drawing.Size(1137, 24);
+            this.Home.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.Home.Size = new System.Drawing.Size(1516, 28);
             this.Home.TabIndex = 0;
             this.Home.Text = "menuStrip1";
             // 
@@ -64,27 +64,27 @@ namespace TimeTable.Common
             this.registerToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.registerToolStripMenuItem.Text = "Register";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -94,20 +94,20 @@ namespace TimeTable.Common
             this.viewEmployeesStripMenuItem,
             this.addEmployeeToolStripMenuItem});
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.employeesToolStripMenuItem.Text = "Employees";
             // 
             // viewEmployeesStripMenuItem
             // 
             this.viewEmployeesStripMenuItem.Name = "viewEmployeesStripMenuItem";
-            this.viewEmployeesStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.viewEmployeesStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.viewEmployeesStripMenuItem.Text = "View";
             this.viewEmployeesStripMenuItem.Click += new System.EventHandler(this.viewEmployeesStripMenuItem_Click_1);
             // 
             // addEmployeeToolStripMenuItem
             // 
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.addEmployeeToolStripMenuItem.Text = "Add Employee";
             this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
             // 
@@ -117,35 +117,36 @@ namespace TimeTable.Common
             this.viewProjectsStripMenuItem1,
             this.addProjectToolStripMenuItem});
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
-            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.projectsToolStripMenuItem.Text = "Projects";
             // 
             // viewProjectsStripMenuItem1
             // 
             this.viewProjectsStripMenuItem1.Name = "viewProjectsStripMenuItem1";
-            this.viewProjectsStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.viewProjectsStripMenuItem1.Size = new System.Drawing.Size(170, 26);
             this.viewProjectsStripMenuItem1.Text = "View";
             this.viewProjectsStripMenuItem1.Click += new System.EventHandler(this.viewProjectsStripMenuItem1_Click);
             // 
             // addProjectToolStripMenuItem
             // 
             this.addProjectToolStripMenuItem.Name = "addProjectToolStripMenuItem";
-            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.addProjectToolStripMenuItem.Text = "Add Project";
             this.addProjectToolStripMenuItem.Click += new System.EventHandler(this.addProjectToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TimeTable.Properties.Resources.Best_employee_management_system;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1137, 752);
+            this.ClientSize = new System.Drawing.Size(1516, 926);
             this.Controls.Add(this.Home);
             this.MainMenuStrip = this.Home;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
             this.ResumeLayout(false);

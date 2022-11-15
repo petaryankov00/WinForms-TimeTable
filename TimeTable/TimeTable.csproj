@@ -52,6 +52,7 @@
     <Compile Include="Common\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config\SQLConfig.cs" />
     <Compile Include="Employees\AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +147,7 @@
   <ItemGroup>
     <None Include="Resources\rsz_235-2351000_login-icon-png-transparent-png.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Config\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Best-employee-management-system.jpg" />
   </ItemGroup>
