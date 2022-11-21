@@ -11,7 +11,7 @@ namespace TimeTable.Config
 {
     public class SQLConfig
     {
-        private SqlConnection con = new SqlConnection("Server=MPC-1\\SQLEXPRESS;Database=TimeTable;User Id=sa;Password=1916;");
+        private SqlConnection con = new SqlConnection("Server=EC2AMAZ-DDVBGQP;Database=TimeTable;Trusted_Connection = true;");
         private SqlCommand cmd;
         private SqlDataAdapter da;
         public DataTable dt;

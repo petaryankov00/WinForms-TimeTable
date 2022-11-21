@@ -33,8 +33,8 @@ namespace TimeTable.Employees
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.MiddleNameTextBox = new System.Windows.Forms.TextBox();
             this.LabelMiddleName = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.LastNameTextBox = new System.Windows.Forms.Label();
+            this.LastNameTextBox = new System.Windows.Forms.TextBox();
+            this.LastNameLabel = new System.Windows.Forms.Label();
             this.EGNTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.PositionDropdown = new System.Windows.Forms.ComboBox();
@@ -87,25 +87,25 @@ namespace TimeTable.Employees
             this.LabelMiddleName.TabIndex = 3;
             this.LabelMiddleName.Text = "Middle Name";
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(241, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(262, 30);
-            this.textBox3.TabIndex = 6;
-            // 
             // LastNameTextBox
             // 
-            this.LastNameTextBox.AutoSize = true;
-            this.LastNameTextBox.BackColor = System.Drawing.Color.White;
-            this.LastNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.LastNameTextBox.Location = new System.Drawing.Point(238, 181);
+            this.LastNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameTextBox.Location = new System.Drawing.Point(241, 201);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(76, 17);
-            this.LastNameTextBox.TabIndex = 5;
-            this.LastNameTextBox.Text = "Last Name";
+            this.LastNameTextBox.Size = new System.Drawing.Size(262, 30);
+            this.LastNameTextBox.TabIndex = 6;
+            // 
+            // LastNameLabel
+            // 
+            this.LastNameLabel.AutoSize = true;
+            this.LastNameLabel.BackColor = System.Drawing.Color.White;
+            this.LastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.LastNameLabel.Location = new System.Drawing.Point(238, 181);
+            this.LastNameLabel.Name = "LastNameLabel";
+            this.LastNameLabel.Size = new System.Drawing.Size(76, 17);
+            this.LastNameLabel.TabIndex = 5;
+            this.LastNameLabel.Text = "Last Name";
             // 
             // EGNTextBox
             // 
@@ -131,11 +131,15 @@ namespace TimeTable.Employees
             // 
             this.PositionDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PositionDropdown.FormattingEnabled = true;
+            this.PositionDropdown.Items.AddRange(new object[] {
+            ".NET",
+            "QA",
+            "Java",
+            "HR"});
             this.PositionDropdown.Location = new System.Drawing.Point(241, 325);
             this.PositionDropdown.Name = "PositionDropdown";
             this.PositionDropdown.Size = new System.Drawing.Size(262, 28);
             this.PositionDropdown.TabIndex = 9;
-            this.PositionDropdown.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -197,6 +201,7 @@ namespace TimeTable.Employees
             this.AddEmployeeButton.TabIndex = 15;
             this.AddEmployeeButton.Text = "Add Employee";
             this.AddEmployeeButton.UseVisualStyleBackColor = false;
+            this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
             // 
             // AddEmployeeForm
             // 
@@ -212,8 +217,8 @@ namespace TimeTable.Employees
             this.Controls.Add(this.PositionDropdown);
             this.Controls.Add(this.EGNTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.LastNameTextBox);
+            this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.MiddleNameTextBox);
             this.Controls.Add(this.LabelMiddleName);
             this.Controls.Add(this.FirstNameTextBox);
@@ -233,8 +238,8 @@ namespace TimeTable.Employees
         private System.Windows.Forms.TextBox FirstNameTextBox;
         private System.Windows.Forms.TextBox MiddleNameTextBox;
         private System.Windows.Forms.Label LabelMiddleName;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label LastNameTextBox;
+        private System.Windows.Forms.TextBox LastNameTextBox;
+        private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.TextBox EGNTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox PositionDropdown;
