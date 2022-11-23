@@ -16,7 +16,7 @@ namespace TimeTable.Config
         private SqlDataAdapter da;
         public DataTable dt;
         int result;
-        public void Execute_CUD(string sql, string msg_false, string msg_true)
+        public bool Execute_CUD(string sql)
         {
             try
             {
@@ -28,17 +28,17 @@ namespace TimeTable.Config
 
                 if (result > 0)
                 {
-                    MessageBox.Show(msg_true);
+                    return true;
                 }
                 else
                 {
-                    MessageBox.Show(msg_false);
+                    return false;
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                return false;
             }
             finally
             {
@@ -195,6 +195,28 @@ namespace TimeTable.Config
             finally
             {
                 da.Dispose();
+                con.Close();
+            }
+        }
+
+        public object GetSingleValue(string sql)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand();
+
+
+                cmd.Connection = con;
+                cmd.CommandText = sql;
+                return cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            { 
+                return null;
+            }
+            finally
+            {
                 con.Close();
             }
         }

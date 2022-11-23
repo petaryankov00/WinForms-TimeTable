@@ -36,8 +36,11 @@ namespace TimeTable.Employees
                 + "VALUES ('" + EGNTextBox.Text + "','" + FirstNameTextBox.Text + "','" + MiddleNameTextBox.Text
                 + "','" + LastNameTextBox.Text + "','" + PositionDropdown.Text + "','" + StartingDate.Value + "')";
 
-            config.Execute_CUD(sql,"Server error", "Succesfull added employee");
-            this.Close();
+            if (config.Execute_CUD(sql))
+            {
+                MessageBox.Show("Succesfull added employee");
+                this.Close();
+            }
         }
     }
 }

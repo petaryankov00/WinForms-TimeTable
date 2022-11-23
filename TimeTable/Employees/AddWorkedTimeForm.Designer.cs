@@ -37,13 +37,13 @@ namespace TimeTable.Employees
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.AddHoursButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ProjectsGridView = new System.Windows.Forms.DataGridView();
             this.ProjectsLabel = new System.Windows.Forms.Label();
             this.AddHoursTextBox = new System.Windows.Forms.TextBox();
             this.LabelMiddleName = new System.Windows.Forms.Label();
             this.ProjectNameTextBox = new System.Windows.Forms.TextBox();
             this.LabelFirstName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -61,6 +61,7 @@ namespace TimeTable.Employees
             // DateOfWorkedHoursPicker
             // 
             this.DateOfWorkedHoursPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateOfWorkedHoursPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateOfWorkedHoursPicker.Location = new System.Drawing.Point(313, 258);
             this.DateOfWorkedHoursPicker.Name = "DateOfWorkedHoursPicker";
             this.DateOfWorkedHoursPicker.Size = new System.Drawing.Size(214, 26);
@@ -97,12 +98,13 @@ namespace TimeTable.Employees
             this.AddHoursButton.TabIndex = 54;
             this.AddHoursButton.Text = "Add Hours";
             this.AddHoursButton.UseVisualStyleBackColor = true;
+            this.AddHoursButton.Click += new System.EventHandler(this.AddHoursButton_Click);
             // 
-            // dataGridView1
+            // ProjectsGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.ProjectsGridView.AllowUserToAddRows = false;
+            this.ProjectsGridView.AllowUserToDeleteRows = false;
+            this.ProjectsGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -110,8 +112,8 @@ namespace TimeTable.Employees
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProjectsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.ProjectsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,9 +121,9 @@ namespace TimeTable.Employees
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 48);
-            this.dataGridView1.Name = "dataGridView1";
+            this.ProjectsGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ProjectsGridView.Location = new System.Drawing.Point(75, 48);
+            this.ProjectsGridView.Name = "ProjectsGridView";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,10 +131,11 @@ namespace TimeTable.Employees
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(429, 115);
-            this.dataGridView1.TabIndex = 53;
+            this.ProjectsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.ProjectsGridView.RowHeadersWidth = 51;
+            this.ProjectsGridView.Size = new System.Drawing.Size(429, 115);
+            this.ProjectsGridView.TabIndex = 53;
+            this.ProjectsGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProjectsGridView_CellContentClick);
             // 
             // ProjectsLabel
             // 
@@ -196,7 +199,7 @@ namespace TimeTable.Employees
             this.Controls.Add(this.DescriptionTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.AddHoursButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ProjectsGridView);
             this.Controls.Add(this.ProjectsLabel);
             this.Controls.Add(this.AddHoursTextBox);
             this.Controls.Add(this.LabelMiddleName);
@@ -205,7 +208,8 @@ namespace TimeTable.Employees
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddWorkedTimeForm";
             this.Text = "AddWorkedTimeForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.AddWorkedTimeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +222,7 @@ namespace TimeTable.Employees
         private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button AddHoursButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ProjectsGridView;
         private System.Windows.Forms.Label ProjectsLabel;
         private System.Windows.Forms.TextBox AddHoursTextBox;
         private System.Windows.Forms.Label LabelMiddleName;

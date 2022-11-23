@@ -156,6 +156,7 @@ namespace TimeTable.Employees
             // StartingDate
             // 
             this.StartingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.StartingDate.Location = new System.Drawing.Point(241, 385);
             this.StartingDate.Name = "StartingDate";
             this.StartingDate.Size = new System.Drawing.Size(262, 26);

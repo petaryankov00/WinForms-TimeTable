@@ -15,6 +15,7 @@ namespace TimeTable.Employees
     {
         private SQLConfig config;
         private bool isReadyForUpdate = false;
+        private decimal currentEmployeeId;
 
         public EmployeeViewForm()
         {
@@ -24,9 +25,12 @@ namespace TimeTable.Employees
 
         private void AddWorkedTimeButton_Click(object sender, EventArgs e)
         {
-            var childForm = new AddWorkedTimeForm();
-            childForm.StartPosition = FormStartPosition.CenterScreen;
-            childForm.Show();
+            if (isReadyForUpdate)
+            {
+                var childForm = new AddWorkedTimeForm(this.currentEmployeeId);
+                childForm.StartPosition = FormStartPosition.CenterScreen;
+                childForm.Show();
+            }
         }
 
         private void EmployeeViewForm_Load(object sender, EventArgs e)
@@ -36,7 +40,7 @@ namespace TimeTable.Employees
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT EMPLOYEE_EGN as EGN, EMPLOYEE_NAME as [First Name], EMPLOYEE_SURNAME as [Middle Name],EMPLOYEE_LASTNAME as [Last Name],EMPLOYEE_POSITION as [Position],EMPLOYEE_HIREDATE as [Start Date] FROM EMPLOYEES WHERE EMPLOYEE_EGN LIKE '%"
+            string sql = "SELECT EMPLOYEE_ID as ID,EMPLOYEE_EGN as EGN, EMPLOYEE_NAME as [First Name], EMPLOYEE_SURNAME as [Middle Name],EMPLOYEE_LASTNAME as [Last Name],EMPLOYEE_POSITION as [Position],EMPLOYEE_HIREDATE as [Start Date] FROM EMPLOYEES WHERE EMPLOYEE_EGN LIKE '%"
                 + SearchBox.Text + "%' OR CONCAT(EMPLOYEE_NAME, ' ',EMPLOYEE_SURNAME, ' ',EMPLOYEE_LASTNAME) LIKE '%" + SearchBox.Text + "%' OR EMPLOYEE_POSITION LIKE '%" + SearchBox.Text + "%'";
 
             config.Load_DTG(sql, AllEmployeesGridView);
@@ -47,6 +51,7 @@ namespace TimeTable.Employees
             if (e.RowIndex >= 0)
             {
                 var row = this.AllEmployeesGridView.Rows[e.RowIndex];
+                this.currentEmployeeId = (decimal)row.Cells["ID"].Value;
                 FirstNameTextBox.Text = row.Cells["First Name"].Value.ToString();
                 MiddleNameTextBox.Text = row.Cells["Middle Name"].Value.ToString();
                 LastNameTextBox.Text = row.Cells["Last Name"].Value.ToString();
@@ -77,9 +82,12 @@ namespace TimeTable.Employees
                 string query = "UPDATE Employees SET EMPLOYEE_NAME = '" + FirstNameTextBox.Text + "', EMPLOYEE_SURNAME = '" + MiddleNameTextBox.Text
                     + "', EMPLOYEE_LASTNAME = '" + LastNameTextBox.Text + "', EMPLOYEE_POSITION = '" + PositionDropdown.Text + "', EMPLOYEE_HIREDATE = '" + StartingDate.Value + "' WHERE EMPLOYEE_EGN = '" + EGNTextBox.Text + "'";
 
-                config.Execute_CUD(query, "Server Error", "Empoyee inforamtion updated");
-                this.SearchButton_Click(sender, e);
-                this.CancelButton_Click(sender, e);
+                if (config.Execute_CUD(query))
+                {
+                    MessageBox.Show("Empoyee inforamtion updated");
+                    this.SearchButton_Click(sender, e);
+                    this.CancelButton_Click(sender, e);
+                }
             }
         }
 

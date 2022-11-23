@@ -35,9 +35,11 @@ namespace TimeTable
 
             string sql = "INSERT INTO ACCOUNTS VALUES ('" + this.usernameTextBox.Text + "', '" +  this.passwordTextBox.Text + "')";
 
-            config.Execute_CUD(sql, "Error while register account", "Succesfull created account");
-
-            this.Close();
+            if(config.Execute_CUD(sql))
+            {
+                MessageBox.Show("Succesfull created account");
+                this.Close();
+            }
         }
     }
 }
