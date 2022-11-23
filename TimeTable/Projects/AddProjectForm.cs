@@ -68,7 +68,7 @@ namespace TimeTable.Projects
         public List<DateTime> GetMonthsBetween(DateTime from, DateTime to)
         {
             List<DateTime> results = new List<DateTime>();
-            for (var i = from; i <= to; i = from.AddMonths(1))
+            for (var i = from; i <= to; i = i.AddMonths(1))
             {
                 if (i.Month == 12 && results.Contains(i))
                 {
