@@ -31,8 +31,8 @@ namespace TimeTable.Projects
             }
 
             string sql = "INSERT INTO PROJECT(PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_BEGIN,PROJECT_END,PROJECT_STATUS,PROJECT_MAXHOURS) "
-                + "VALUES ('" + ProjectNameTextBox.Text + "','" + DescriptionTextBox.Text + "','" + StartDate.Value
-                + "','" + EndDate.Value + "','O','" + MaxHours.Text + "')";
+                + "VALUES ('" + ProjectNameTextBox.Text + "','" + DescriptionTextBox.Text + "','" + StartDate.Text
+                + "','" + EndDate.Text + "','O','" + MaxHours.Text + "')";
 
             if (config.Execute_CUD(sql))
             {

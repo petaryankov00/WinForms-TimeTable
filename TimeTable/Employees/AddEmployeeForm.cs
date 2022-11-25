@@ -34,13 +34,22 @@ namespace TimeTable.Employees
 
             string sql = "INSERT INTO Employees(EMPLOYEE_EGN, EMPLOYEE_NAME, EMPLOYEE_SURNAME,EMPLOYEE_LASTNAME,EMPLOYEE_POSITION,EMPLOYEE_HIREDATE) "
                 + "VALUES ('" + EGNTextBox.Text + "','" + FirstNameTextBox.Text + "','" + MiddleNameTextBox.Text
-                + "','" + LastNameTextBox.Text + "','" + PositionDropdown.Text + "','" + StartingDate.Value + "')";
+                + "','" + LastNameTextBox.Text + "','" + PositionDropdown.Text + "','" + StartingDate.Text + "')";
 
             if (config.Execute_CUD(sql))
             {
                 MessageBox.Show("Succesfull added employee");
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Unable to add employee. Please contact administrator");
+            }
+        }
+
+        private void AddEmployeeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

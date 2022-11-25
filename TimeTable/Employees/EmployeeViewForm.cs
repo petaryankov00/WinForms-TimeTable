@@ -80,7 +80,7 @@ namespace TimeTable.Employees
                 }
 
                 string query = "UPDATE Employees SET EMPLOYEE_NAME = '" + FirstNameTextBox.Text + "', EMPLOYEE_SURNAME = '" + MiddleNameTextBox.Text
-                    + "', EMPLOYEE_LASTNAME = '" + LastNameTextBox.Text + "', EMPLOYEE_POSITION = '" + PositionDropdown.Text + "', EMPLOYEE_HIREDATE = '" + StartingDate.Value + "' WHERE EMPLOYEE_EGN = '" + EGNTextBox.Text + "'";
+                    + "', EMPLOYEE_LASTNAME = '" + LastNameTextBox.Text + "', EMPLOYEE_POSITION = '" + PositionDropdown.Text + "', EMPLOYEE_HIREDATE = '" + StartingDate.Text + "' WHERE EMPLOYEE_EGN = '" + EGNTextBox.Text + "'";
 
                 if (config.Execute_CUD(query))
                 {

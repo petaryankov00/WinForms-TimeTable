@@ -67,7 +67,7 @@ namespace TimeTable.Employees
                     return;
                 }
 
-                string sql = $"INSERT INTO PROJECT_HOURS(PROJECT_ID, EMPLOYEE_ID, PROJECT_TASKDATE, PROJECT_MONTH_ID, PROJECT_TASK, PROJECT_HOURS) VALUES (" + this.projectId.ToString() + "," + this.employeeId.ToString() + ",'" + DateOfWorkedHoursPicker.Value.ToString()
+                string sql = $"INSERT INTO PROJECT_HOURS(PROJECT_ID, EMPLOYEE_ID, PROJECT_TASKDATE, PROJECT_MONTH_ID, PROJECT_TASK, PROJECT_HOURS) VALUES (" + this.projectId.ToString() + "," + this.employeeId.ToString() + ",'" + DateOfWorkedHoursPicker.Text
                             + "'," + projectMonthId.ToString() + ",'" + DescriptionTextBox.Text + "'," + MaxHours.Text + ")";
 
                 if (!config.Execute_CUD(sql))
