@@ -57,6 +57,10 @@ namespace TimeTable.Projects
                 MessageBox.Show("Successful created project");
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Unable to add project. Pleasa contact administrator");
+            }
         }
 
         private void AddProjectForm_Load(object sender, EventArgs e)
