@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TimeTable.Employees;
 using TimeTable.Projects;
@@ -96,6 +97,18 @@ namespace TimeTable.Common
             {
                 this.loginToolStripMenuItem.Text = "Login";
                 this.registerToolStripMenuItem.Visible = true;
+                List<Form> openForms = new List<Form>();
+
+                foreach (Form f in Application.OpenForms)
+                    openForms.Add(f);
+
+                foreach (Form f in openForms)
+                {
+                    if (f.Name != "HomeForm")
+                    {
+                        f.Close();
+                    }
+                }
             }
         }
     }

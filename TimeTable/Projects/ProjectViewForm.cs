@@ -25,6 +25,8 @@ namespace TimeTable.Projects
         private void ProjectViewForm_Load(object sender, EventArgs e)
         {
             SearchButton_Click(sender, e);
+            this.EditButton.Enabled = false;
+            this.ReportMonthButton.Enabled = false;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -47,6 +49,120 @@ namespace TimeTable.Projects
                 DescriptionTextBox.Text = row.Cells["Description"].Value.ToString();
                 WorkHoursDropdown.Text = row.Cells["Max Hours"].Value.ToString();
                 StatusBox.Text = row.Cells["Status"].Value.ToString();
+                this.ReportMonthPicker.MinDate = DateTime.Parse(row.Cells["Begin"].Value.ToString());
+                this.ReportMonthPicker.MaxDate = DateTime.Parse(row.Cells["End"].Value.ToString());
+                this.ReportMonthPicker.Value = DateTime.Parse(row.Cells["Begin"].Value.ToString());
+
+
+                string query = $"SELECT pm.PROJECT_MONTH as [Month],SUM(PROJECT_HOURS) as [Reported Hours] ,COUNT(ph.EMPLOYEE_ID) as [Employee Count] FROM PROJECT_HOURS as ph JOIN PROJECT_MONTHS as pm ON ph.PROJECT_MONTH_ID = pm.PROJECT_MONTH_ID " +
+                    $"WHERE ph.PROJECT_ID = {this.currentProjectId} GROUP BY pm.PROJECT_MONTH";
+
+                config.Load_DTG(query, this.WorkedHoursGridView);
+
+                if (row.Cells["Status"].Value.ToString() == "O")
+                {
+                    this.EditButton.Enabled = true;
+                    this.ReportMonthButton.Enabled = true;
+                    this.isReadyForUpdate = true;
+                }
+                else 
+                {
+                    this.EditButton.Enabled = false;
+                    this.ReportMonthButton.Enabled = false;
+                    this.isReadyForUpdate = false;
+                }
+            }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (this.isReadyForUpdate)
+            {
+                if (String.IsNullOrEmpty(ProjectNameTextBox.Text) ||
+                 String.IsNullOrEmpty(DescriptionTextBox.Text) ||
+                 String.IsNullOrEmpty(WorkHoursDropdown.Text)
+                 || String.IsNullOrEmpty(StatusBox.Text))
+                {
+                    MessageBox.Show("All fields are required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string query = $"UPDATE PROJECT SET PROJECT_NAME = '{ProjectNameTextBox.Text}', PROJECT_BEGIN = '{StartDatePicker.Text}', PROJECT_END = '{EndDatePicker.Text}', PROJECT_DESCRIPTION = '{DescriptionTextBox.Text}'," +
+                                     $" PROJECT_MAXHOURS = {WorkHoursDropdown.Text}, PROJECT_STATUS = '{StatusBox.Text}' WHERE PROJECT_ID = {this.currentProjectId}";
+
+                if (this.StatusBox.Text == "C")
+                {
+                    var confirmResult = MessageBox.Show("Are you sure you want to close this project?", "Warning", MessageBoxButtons.YesNo);
+
+                    if (confirmResult == DialogResult.No)
+                    {
+                        return;
+                      
+                    }
+                }
+
+                if (config.Execute_CUD(query))
+                {
+                    MessageBox.Show("Project inforamtion updated");
+                    this.SearchButton_Click(sender, e);
+                    this.CancelButton_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to update project. Please contact administrator");
+                }
+
+            }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            ProjectNameTextBox.Text = "";
+            StartDatePicker.Value = DateTime.Now;
+            EndDatePicker.Value = DateTime.Now;
+            DescriptionTextBox.Text = "";
+            WorkHoursDropdown.SelectedItem = null;
+            StatusBox.SelectedItem = null;
+            ReportMonthPicker.Value = DateTime.Now;
+            this.EditButton.Enabled = false;
+            this.ReportMonthButton.Enabled = false;
+            this.isReadyForUpdate = false;
+        }
+
+        private void ReportMonthButton_Click(object sender, EventArgs e)
+        {
+            if (this.isReadyForUpdate)
+            {
+                if (ReportMonthPicker.Value.Month == DateTime.Now.Month || (ReportMonthPicker.Value.Month > DateTime.Now.Month && ReportMonthPicker.Value.Year == DateTime.Now.Year) || ReportMonthPicker.Value.Year > DateTime.Now.Year)
+                {
+                    MessageBox.Show("You can't report month, because it is not finished.");
+                }
+
+                string checkStatusQuery = $"SELECT PROJECT_MONTH_STATUS FROM PROJECT_MONTHS WHERE PROJECT_ID = {this.currentProjectId} AND PROJECT_YEAR = {ReportMonthPicker.Value.Year} AND PROJECT_MONTH = {ReportMonthPicker.Value.Month}";
+
+                var status = config.GetSingleValue(checkStatusQuery) as string;
+
+                if (status == null)
+                {
+                    MessageBox.Show("Unable to report month. Please contact administrator");
+                    return;
+                }
+                else if (status == "C")
+                {
+                    MessageBox.Show("Selected month has already been reported.");
+                    return;
+                }
+
+                string query = $"UPDATE PROJECT_MONTHS SET PROJECT_MONTH_STATUS = 'C' WHERE PROJECT_ID = {this.currentProjectId} AND PROJECT_YEAR = {ReportMonthPicker.Value.Year} AND PROJECT_MONTH = {ReportMonthPicker.Value.Month}";
+
+                if (config.Execute_CUD(query))
+                {
+                    MessageBox.Show("Successfully reported month");
+                }
+                else
+                {
+                    MessageBox.Show("Unable to report month. Please contact administrator");
+                }
             }
         }
     }

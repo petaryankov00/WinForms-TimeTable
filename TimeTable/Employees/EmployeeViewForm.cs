@@ -88,6 +88,10 @@ namespace TimeTable.Employees
                     this.SearchButton_Click(sender, e);
                     this.CancelButton_Click(sender, e);
                 }
+                else
+                {
+                    MessageBox.Show("Unable to update employee information. Please contact administrator.");
+                }
             }
         }
 
@@ -101,6 +105,41 @@ namespace TimeTable.Employees
             StartingDate.Value = DateTime.Now;
             WorkedHoursGridView.DataSource = null;
             this.isReadyForUpdate = false;
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (this.isReadyForUpdate)
+            {
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this employee?", "Warning", MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    string queryForHours = $"DELETE FROM PROJECT_HOURS WHERE EMPLOYEE_ID = {this.currentEmployeeId}";
+                    string queryForEmployees = $"DELETE FROM EMPLOYEES WHERE EMPLOYEE_ID = {this.currentEmployeeId}";
+
+
+                    if (this.config.Execute_CUD(queryForHours))
+                    {
+                        if (this.config.Execute_CUD(queryForEmployees))
+                        {
+                            MessageBox.Show("Successfull deleted employee");
+                            this.SearchButton_Click(sender, e);
+                            this.CancelButton_Click(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Unable to delete employee. Please contact administrator.");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to delete employee. Please contact administrator.");
+                    }
+
+                }
+            }
         }
     }
 }

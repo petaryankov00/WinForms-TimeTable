@@ -41,8 +41,8 @@ namespace TimeTable.Employees
                 this.projectId = (decimal)row.Cells["ID"].Value;
                 this.currentMaxHours = (decimal)row.Cells["Max Hours"].Value;
                 ProjectNameTextBox.Text = row.Cells["Name"].Value.ToString();
-                DateOfWorkedHoursPicker.MinDate = DateTime.Now;
-                DateOfWorkedHoursPicker.MaxDate = (DateTime)row.Cells["End"].Value;
+                DateOfWorkedHoursPicker.MinDate = (DateTime)row.Cells["Begin"].Value;
+                DateOfWorkedHoursPicker.MaxDate = DateTime.Now;
                 this.isSelectedRow = true;
             }
         }
@@ -64,6 +64,16 @@ namespace TimeTable.Employees
                 if (projectMonthId == null)
                 {
                     MessageBox.Show("Unable to add working hours. Contact administrator");
+                    return;
+                }
+
+                string checkStatusQuery = $"SELECT PROJECT_MONTH_STATUS FROM PROJECT_MONTHS WHERE PROJECT_MONTH_ID = {projectMonthId}";
+
+                var status = config.GetSingleValue(checkStatusQuery) as string;
+
+                if (status == "C")
+                {
+                    MessageBox.Show("The month you try to report work hours has already been reported.");
                     return;
                 }
 
