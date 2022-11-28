@@ -141,5 +141,15 @@ namespace TimeTable.Employees
                 }
             }
         }
+
+        private void ViewProjectsButton_Click(object sender, EventArgs e)
+        {
+            if (this.isReadyForUpdate)
+            {
+                var childForm = new EmployeeProjectsForm(this.currentEmployeeId);
+                childForm.StartPosition = FormStartPosition.CenterScreen;
+                childForm.Show();
+            }
+        }
     }
 }
