@@ -42,7 +42,7 @@ namespace TimeTable.Employees
                 this.currentMaxHours = (decimal)row.Cells["Max Hours"].Value;
                 ProjectNameTextBox.Text = row.Cells["Name"].Value.ToString();
                 DateOfWorkedHoursPicker.MinDate = (DateTime)row.Cells["Begin"].Value;
-                DateOfWorkedHoursPicker.MaxDate = DateTime.Now;
+                DateOfWorkedHoursPicker.MaxDate = (DateTime)row.Cells["End"].Value;
                 this.isSelectedRow = true;
             }
         }
@@ -54,6 +54,12 @@ namespace TimeTable.Employees
                 if (String.IsNullOrEmpty(DescriptionTextBox.Text))
                 {
                     MessageBox.Show($"Description field is required");
+                    return;
+                }
+
+                if (DateOfWorkedHoursPicker.Value > DateTime.Now)
+                {
+                    MessageBox.Show($"You cannot report worked time in future.");
                     return;
                 }
 
