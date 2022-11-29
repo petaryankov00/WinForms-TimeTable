@@ -123,7 +123,7 @@ namespace TimeTable.Projects
             DescriptionTextBox.Text = "";
             WorkHoursDropdown.SelectedItem = null;
             StatusBox.SelectedItem = null;
-            ReportMonthPicker.Value = DateTime.Now;
+            ReportMonthPicker.Text = null;
             this.EditButton.Enabled = false;
             this.ReportMonthButton.Enabled = false;
             this.isReadyForUpdate = false;
@@ -136,6 +136,7 @@ namespace TimeTable.Projects
                 if (ReportMonthPicker.Value.Month == DateTime.Now.Month || (ReportMonthPicker.Value.Month > DateTime.Now.Month && ReportMonthPicker.Value.Year == DateTime.Now.Year) || ReportMonthPicker.Value.Year > DateTime.Now.Year)
                 {
                     MessageBox.Show("You can't report month, because it is not finished.");
+                    return;
                 }
 
                 string checkStatusQuery = $"SELECT PROJECT_MONTH_STATUS FROM PROJECT_MONTHS WHERE PROJECT_ID = {this.currentProjectId} AND PROJECT_YEAR = {ReportMonthPicker.Value.Year} AND PROJECT_MONTH = {ReportMonthPicker.Value.Month}";
