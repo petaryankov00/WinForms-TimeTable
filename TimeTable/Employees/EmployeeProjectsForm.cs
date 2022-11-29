@@ -70,9 +70,15 @@ namespace TimeTable.Employees
                     return;
                 }
 
-                var checkHoursQuery = $"SELECT SUM(PROJECT_HOURS) FROM PROJECT_HOURS WHERE EMPLOYEE_ID = {this.employeeId} AND PROJECT_TASKDATE = '{DateOfWorkedHoursPicker.Text}' GROUP BY PROJECT_TASKDATE";
+                var checkHoursQuery = $"SELECT SUM(PROJECT_HOURS) FROM PROJECT_HOURS WHERE EMPLOYEE_ID = {this.employeeId} AND PROJECT_TASKDATE = '{DateOfWorkedHoursPicker.Text}' AND PROJECT_ID <> {this.currentProjectId} GROUP BY PROJECT_TASKDATE";
 
-                var hours = (decimal)this.config.GetSingleValue(checkHoursQuery);
+
+                var hours = this.config.GetSingleValue(checkHoursQuery) as decimal?;
+
+                if (hours is null)
+                {
+                    hours = 0;
+                }
 
                 if (hours + int.Parse(Hours.Text) > 8)
                 {

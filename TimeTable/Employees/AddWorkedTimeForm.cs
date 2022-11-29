@@ -51,6 +51,12 @@ namespace TimeTable.Employees
         {
             if (this.isSelectedRow)
             {
+                if (String.IsNullOrEmpty(DescriptionTextBox.Text))
+                {
+                    MessageBox.Show($"Description field is required");
+                    return;
+                }
+
                 if (String.IsNullOrEmpty(MaxHours.Text) || this.currentMaxHours < int.Parse(MaxHours.Text))
                 {
                     MessageBox.Show($"Working hours must be between 1 and {this.currentMaxHours} for this project");
@@ -79,7 +85,12 @@ namespace TimeTable.Employees
 
                 var checkHoursQuery = $"SELECT SUM(PROJECT_HOURS) FROM PROJECT_HOURS WHERE EMPLOYEE_ID = {this.employeeId} AND PROJECT_TASKDATE = '{DateOfWorkedHoursPicker.Text}' GROUP BY PROJECT_TASKDATE";
 
-                var hours = (decimal)this.config.GetSingleValue(checkHoursQuery);
+                var hours = this.config.GetSingleValue(checkHoursQuery) as decimal?;
+
+                if (hours is null)
+                {
+                    hours = 0;
+                }
 
                 if (hours + int.Parse(MaxHours.Text) > 8)
                 {
