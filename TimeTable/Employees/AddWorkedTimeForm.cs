@@ -51,7 +51,7 @@ namespace TimeTable.Employees
         {
             if (this.isSelectedRow)
             {
-                if (this.currentMaxHours < int.Parse(MaxHours.Text))
+                if (String.IsNullOrEmpty(MaxHours.Text) || this.currentMaxHours < int.Parse(MaxHours.Text))
                 {
                     MessageBox.Show($"Working hours must be between 1 and {this.currentMaxHours} for this project");
                     return;
@@ -74,6 +74,16 @@ namespace TimeTable.Employees
                 if (status == "C")
                 {
                     MessageBox.Show("The month you try to report work hours has already been reported.");
+                    return;
+                }
+
+                var checkHoursQuery = $"SELECT SUM(PROJECT_HOURS) FROM PROJECT_HOURS WHERE EMPLOYEE_ID = {this.employeeId} AND PROJECT_TASKDATE = '{DateOfWorkedHoursPicker.Text}' GROUP BY PROJECT_TASKDATE";
+
+                var hours = (decimal)this.config.GetSingleValue(checkHoursQuery);
+
+                if (hours + int.Parse(MaxHours.Text) > 8)
+                {
+                    MessageBox.Show($"You have already reached maximum working hours for {DateOfWorkedHoursPicker.Text}");
                     return;
                 }
 

@@ -30,7 +30,7 @@ namespace TimeTable.Employees
         private void InitializeComponent()
         {
             this.EmployeeProjectsGridView = new System.Windows.Forms.DataGridView();
-            this.MaxHours = new System.Windows.Forms.ComboBox();
+            this.Hours = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DateOfWorkedHoursPicker = new System.Windows.Forms.DateTimePicker();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -55,13 +55,14 @@ namespace TimeTable.Employees
             this.EmployeeProjectsGridView.ReadOnly = true;
             this.EmployeeProjectsGridView.Size = new System.Drawing.Size(745, 181);
             this.EmployeeProjectsGridView.TabIndex = 0;
+            this.EmployeeProjectsGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeProjectsGridView_CellContentClick);
             // 
-            // MaxHours
+            // Hours
             // 
-            this.MaxHours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MaxHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxHours.FormattingEnabled = true;
-            this.MaxHours.Items.AddRange(new object[] {
+            this.Hours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Hours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hours.FormattingEnabled = true;
+            this.Hours.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -69,10 +70,10 @@ namespace TimeTable.Employees
             "6",
             "7",
             "8"});
-            this.MaxHours.Location = new System.Drawing.Point(409, 241);
-            this.MaxHours.Name = "MaxHours";
-            this.MaxHours.Size = new System.Drawing.Size(256, 28);
-            this.MaxHours.TabIndex = 68;
+            this.Hours.Location = new System.Drawing.Point(409, 241);
+            this.Hours.Name = "Hours";
+            this.Hours.Size = new System.Drawing.Size(256, 28);
+            this.Hours.TabIndex = 68;
             // 
             // label9
             // 
@@ -130,6 +131,7 @@ namespace TimeTable.Employees
             this.EditButton.TabIndex = 63;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // LabelMiddleName
             // 
@@ -176,6 +178,7 @@ namespace TimeTable.Employees
             this.DeleteButton.TabIndex = 69;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // CancelButton
             // 
@@ -189,6 +192,7 @@ namespace TimeTable.Employees
             this.CancelButton.TabIndex = 70;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // EmployeeProjectsForm
             // 
@@ -198,7 +202,7 @@ namespace TimeTable.Employees
             this.ClientSize = new System.Drawing.Size(800, 462);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.DeleteButton);
-            this.Controls.Add(this.MaxHours);
+            this.Controls.Add(this.Hours);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.DateOfWorkedHoursPicker);
             this.Controls.Add(this.DescriptionTextBox);
@@ -220,7 +224,7 @@ namespace TimeTable.Employees
         #endregion
 
         private System.Windows.Forms.DataGridView EmployeeProjectsGridView;
-        private System.Windows.Forms.ComboBox MaxHours;
+        private System.Windows.Forms.ComboBox Hours;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker DateOfWorkedHoursPicker;
         private System.Windows.Forms.TextBox DescriptionTextBox;
