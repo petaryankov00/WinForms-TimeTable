@@ -45,26 +45,6 @@ namespace TimeTable.Config
                 con.Close();
             }
         }
-        public void Execute_Query(string sql)
-        {
-            try
-            {
-                con.Open();
-                cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                result = cmd.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
         public void Load_DTG(string sql, DataGridView dtg)
         {
             try
@@ -106,71 +86,6 @@ namespace TimeTable.Config
 
         }
 
-        public DataTable GetSetOfData(string sql)
-        {
-            try
-            {
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open();
-                }
-                cmd = new SqlCommand();
-                da = new SqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            da.Dispose();
-            con.Close();
-            return dt;
-        }
-
-        public void Fiil_CBO(string sql, ComboBox cbo)
-        {
-            try
-            {
-                if (con.State != ConnectionState.Open)
-                {
-                    con.Open();
-                }
-
-                cmd = new SqlCommand();
-                da = new SqlDataAdapter();
-                dt = new DataTable();
-
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                cbo.DataSource = dt;
-                cbo.ValueMember = dt.Columns[0].ColumnName;
-                cbo.DisplayMember = dt.Columns[0].ColumnName;
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-                da.Dispose();
-            }
-
-        }
         public void SingleResult(string sql)
         {
             try

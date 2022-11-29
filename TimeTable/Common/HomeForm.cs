@@ -81,7 +81,7 @@ namespace TimeTable.Common
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            this.SetMenu(true);
+            this.SetMenu(false);
         }
 
         public void SetMenu(bool isEnabled)
