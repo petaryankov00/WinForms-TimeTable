@@ -250,7 +250,7 @@ namespace TimeTable.Employees
             this.EditButton.FlatAppearance.BorderSize = 0;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditButton.Location = new System.Drawing.Point(328, 255);
+            this.EditButton.Location = new System.Drawing.Point(343, 255);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(136, 31);
@@ -268,9 +268,9 @@ namespace TimeTable.Employees
             this.AddWorkedTimeButton.Location = new System.Drawing.Point(181, 255);
             this.AddWorkedTimeButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddWorkedTimeButton.Name = "AddWorkedTimeButton";
-            this.AddWorkedTimeButton.Size = new System.Drawing.Size(143, 31);
+            this.AddWorkedTimeButton.Size = new System.Drawing.Size(158, 31);
             this.AddWorkedTimeButton.TabIndex = 37;
-            this.AddWorkedTimeButton.Text = "Add Worked Time";
+            this.AddWorkedTimeButton.Text = "Report Worked Time";
             this.AddWorkedTimeButton.UseVisualStyleBackColor = false;
             this.AddWorkedTimeButton.Click += new System.EventHandler(this.AddWorkedTimeButton_Click);
             // 

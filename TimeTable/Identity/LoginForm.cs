@@ -42,7 +42,7 @@ namespace TimeTable
             }
             else
             {
-                MessageBox.Show("", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }     
         }
     }

@@ -30,6 +30,12 @@ namespace TimeTable.Projects
                 return;
             }
 
+            if (StartDate.Value >= EndDate.Value)
+            {
+                MessageBox.Show("Start date should be less than End date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string sql = "INSERT INTO PROJECT(PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_BEGIN,PROJECT_END,PROJECT_STATUS,PROJECT_MAXHOURS) "
                 + "VALUES ('" + ProjectNameTextBox.Text + "','" + DescriptionTextBox.Text + "','" + StartDate.Text
                 + "','" + EndDate.Text + "','O','" + MaxHours.Text + "')";

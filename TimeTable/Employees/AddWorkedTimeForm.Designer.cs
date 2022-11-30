@@ -192,6 +192,7 @@ namespace TimeTable.Employees
             "2",
             "3",
             "4",
+            "5",
             "6",
             "7",
             "8"});
@@ -217,7 +218,7 @@ namespace TimeTable.Employees
             this.Controls.Add(this.LabelMiddleName);
             this.Controls.Add(this.ProjectNameTextBox);
             this.Controls.Add(this.LabelFirstName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddWorkedTimeForm";
             this.Text = "AddWorkedTimeForm";
             this.Load += new System.EventHandler(this.AddWorkedTimeForm_Load);
