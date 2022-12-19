@@ -29,12 +29,12 @@ namespace TimeTable.Projects
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.StartDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@ namespace TimeTable.Projects
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(20, 252);
+            this.label1.Location = new System.Drawing.Point(612, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 36;
@@ -86,7 +86,7 @@ namespace TimeTable.Projects
             this.StartDatePicker.CustomFormat = "yyyy-MM-dd";
             this.StartDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDatePicker.Location = new System.Drawing.Point(23, 272);
+            this.StartDatePicker.Location = new System.Drawing.Point(615, 263);
             this.StartDatePicker.Name = "StartDatePicker";
             this.StartDatePicker.Size = new System.Drawing.Size(259, 26);
             this.StartDatePicker.TabIndex = 35;
@@ -97,7 +97,7 @@ namespace TimeTable.Projects
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(325, 252);
+            this.label6.Location = new System.Drawing.Point(917, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 17);
             this.label6.TabIndex = 34;
@@ -108,7 +108,7 @@ namespace TimeTable.Projects
             this.EndDatePicker.CustomFormat = "yyyy-MM-dd";
             this.EndDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDatePicker.Location = new System.Drawing.Point(328, 272);
+            this.EndDatePicker.Location = new System.Drawing.Point(920, 263);
             this.EndDatePicker.Name = "EndDatePicker";
             this.EndDatePicker.Size = new System.Drawing.Size(258, 26);
             this.EndDatePicker.TabIndex = 33;
@@ -119,7 +119,7 @@ namespace TimeTable.Projects
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(20, 199);
+            this.label5.Location = new System.Drawing.Point(612, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 17);
             this.label5.TabIndex = 32;
@@ -138,7 +138,7 @@ namespace TimeTable.Projects
             "6",
             "7",
             "8"});
-            this.WorkHoursDropdown.Location = new System.Drawing.Point(23, 221);
+            this.WorkHoursDropdown.Location = new System.Drawing.Point(615, 212);
             this.WorkHoursDropdown.Name = "WorkHoursDropdown";
             this.WorkHoursDropdown.Size = new System.Drawing.Size(226, 28);
             this.WorkHoursDropdown.TabIndex = 31;
@@ -149,7 +149,7 @@ namespace TimeTable.Projects
             this.LabelMiddleName.BackColor = System.Drawing.Color.White;
             this.LabelMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelMiddleName.ForeColor = System.Drawing.Color.DimGray;
-            this.LabelMiddleName.Location = new System.Drawing.Point(20, 99);
+            this.LabelMiddleName.Location = new System.Drawing.Point(612, 90);
             this.LabelMiddleName.Name = "LabelMiddleName";
             this.LabelMiddleName.Size = new System.Drawing.Size(79, 17);
             this.LabelMiddleName.TabIndex = 29;
@@ -158,7 +158,7 @@ namespace TimeTable.Projects
             // ProjectNameTextBox
             // 
             this.ProjectNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectNameTextBox.Location = new System.Drawing.Point(23, 58);
+            this.ProjectNameTextBox.Location = new System.Drawing.Point(615, 49);
             this.ProjectNameTextBox.Name = "ProjectNameTextBox";
             this.ProjectNameTextBox.Size = new System.Drawing.Size(563, 30);
             this.ProjectNameTextBox.TabIndex = 28;
@@ -169,7 +169,7 @@ namespace TimeTable.Projects
             this.LabelFirstName.BackColor = System.Drawing.Color.White;
             this.LabelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelFirstName.ForeColor = System.Drawing.Color.DimGray;
-            this.LabelFirstName.Location = new System.Drawing.Point(20, 38);
+            this.LabelFirstName.Location = new System.Drawing.Point(612, 29);
             this.LabelFirstName.Name = "LabelFirstName";
             this.LabelFirstName.Size = new System.Drawing.Size(45, 17);
             this.LabelFirstName.TabIndex = 27;
@@ -181,7 +181,7 @@ namespace TimeTable.Projects
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(325, 199);
+            this.label2.Location = new System.Drawing.Point(917, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 38;
@@ -195,14 +195,14 @@ namespace TimeTable.Projects
             this.StatusBox.Items.AddRange(new object[] {
             "O",
             "C"});
-            this.StatusBox.Location = new System.Drawing.Point(328, 221);
+            this.StatusBox.Location = new System.Drawing.Point(920, 212);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.Size = new System.Drawing.Size(226, 28);
             this.StatusBox.TabIndex = 37;
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(1040, 58);
+            this.SearchButton.Location = new System.Drawing.Point(459, 49);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(70, 23);
             this.SearchButton.TabIndex = 42;
@@ -213,7 +213,7 @@ namespace TimeTable.Projects
             // NameSearch
             // 
             this.NameSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameSearch.Location = new System.Drawing.Point(593, 58);
+            this.NameSearch.Location = new System.Drawing.Point(12, 49);
             this.NameSearch.Name = "NameSearch";
             this.NameSearch.Size = new System.Drawing.Size(154, 23);
             this.NameSearch.TabIndex = 41;
@@ -223,34 +223,34 @@ namespace TimeTable.Projects
             this.AllProjectsGridView.AllowUserToAddRows = false;
             this.AllProjectsGridView.AllowUserToDeleteRows = false;
             this.AllProjectsGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AllProjectsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AllProjectsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AllProjectsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AllProjectsGridView.DefaultCellStyle = dataGridViewCellStyle14;
-            this.AllProjectsGridView.Location = new System.Drawing.Point(593, 87);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AllProjectsGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.AllProjectsGridView.Location = new System.Drawing.Point(12, 78);
             this.AllProjectsGridView.Name = "AllProjectsGridView";
             this.AllProjectsGridView.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AllProjectsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AllProjectsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.AllProjectsGridView.RowHeadersWidth = 51;
             this.AllProjectsGridView.Size = new System.Drawing.Size(585, 228);
             this.AllProjectsGridView.TabIndex = 40;
@@ -260,7 +260,7 @@ namespace TimeTable.Projects
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(806, 13);
+            this.label3.Location = new System.Drawing.Point(225, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 25);
             this.label3.TabIndex = 39;
@@ -269,7 +269,7 @@ namespace TimeTable.Projects
             // CancelButton
             // 
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelButton.Location = new System.Drawing.Point(112, 322);
+            this.CancelButton.Location = new System.Drawing.Point(704, 313);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(157, 41);
             this.CancelButton.TabIndex = 44;
@@ -283,7 +283,7 @@ namespace TimeTable.Projects
             this.EditButton.FlatAppearance.BorderSize = 0;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditButton.Location = new System.Drawing.Point(306, 322);
+            this.EditButton.Location = new System.Drawing.Point(898, 313);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(218, 41);
             this.EditButton.TabIndex = 43;
@@ -296,34 +296,34 @@ namespace TimeTable.Projects
             this.WorkedHoursGridView.AllowUserToAddRows = false;
             this.WorkedHoursGridView.AllowUserToDeleteRows = false;
             this.WorkedHoursGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WorkedHoursGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WorkedHoursGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.WorkedHoursGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.WorkedHoursGridView.DefaultCellStyle = dataGridViewCellStyle17;
-            this.WorkedHoursGridView.Location = new System.Drawing.Point(85, 417);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.WorkedHoursGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.WorkedHoursGridView.Location = new System.Drawing.Point(687, 415);
             this.WorkedHoursGridView.Name = "WorkedHoursGridView";
             this.WorkedHoursGridView.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WorkedHoursGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WorkedHoursGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.WorkedHoursGridView.RowHeadersWidth = 51;
             this.WorkedHoursGridView.Size = new System.Drawing.Size(429, 162);
             this.WorkedHoursGridView.TabIndex = 46;
@@ -332,7 +332,7 @@ namespace TimeTable.Projects
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(241, 382);
+            this.label7.Location = new System.Drawing.Point(843, 380);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 25);
             this.label7.TabIndex = 45;
@@ -342,7 +342,7 @@ namespace TimeTable.Projects
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(819, 382);
+            this.label4.Location = new System.Drawing.Point(200, 344);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 25);
             this.label4.TabIndex = 47;
@@ -354,7 +354,7 @@ namespace TimeTable.Projects
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(738, 417);
+            this.label8.Location = new System.Drawing.Point(119, 379);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 17);
             this.label8.TabIndex = 49;
@@ -365,7 +365,7 @@ namespace TimeTable.Projects
             this.ReportMonthPicker.CustomFormat = "M/yy";
             this.ReportMonthPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportMonthPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ReportMonthPicker.Location = new System.Drawing.Point(741, 437);
+            this.ReportMonthPicker.Location = new System.Drawing.Point(122, 399);
             this.ReportMonthPicker.Name = "ReportMonthPicker";
             this.ReportMonthPicker.Size = new System.Drawing.Size(293, 26);
             this.ReportMonthPicker.TabIndex = 48;
@@ -374,7 +374,7 @@ namespace TimeTable.Projects
             // ReportMonthButton
             // 
             this.ReportMonthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportMonthButton.Location = new System.Drawing.Point(822, 478);
+            this.ReportMonthButton.Location = new System.Drawing.Point(194, 454);
             this.ReportMonthButton.Name = "ReportMonthButton";
             this.ReportMonthButton.Size = new System.Drawing.Size(140, 36);
             this.ReportMonthButton.TabIndex = 50;
@@ -385,7 +385,7 @@ namespace TimeTable.Projects
             // DescriptionTextBox
             // 
             this.DescriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.DescriptionTextBox.Location = new System.Drawing.Point(23, 119);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(615, 110);
             this.DescriptionTextBox.MinimumSize = new System.Drawing.Size(563, 68);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
@@ -398,7 +398,7 @@ namespace TimeTable.Projects
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(590, 38);
+            this.label9.Location = new System.Drawing.Point(9, 29);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 17);
             this.label9.TabIndex = 52;
@@ -410,7 +410,7 @@ namespace TimeTable.Projects
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(750, 38);
+            this.label10.Location = new System.Drawing.Point(169, 29);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 17);
             this.label10.TabIndex = 56;
@@ -421,7 +421,7 @@ namespace TimeTable.Projects
             this.StartDateSearch.CustomFormat = "yyyy-MM-dd";
             this.StartDateSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDateSearch.Location = new System.Drawing.Point(753, 58);
+            this.StartDateSearch.Location = new System.Drawing.Point(172, 49);
             this.StartDateSearch.Name = "StartDateSearch";
             this.StartDateSearch.Size = new System.Drawing.Size(136, 26);
             this.StartDateSearch.TabIndex = 55;
@@ -433,7 +433,7 @@ namespace TimeTable.Projects
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(897, 38);
+            this.label11.Location = new System.Drawing.Point(316, 29);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 17);
             this.label11.TabIndex = 54;
@@ -444,7 +444,7 @@ namespace TimeTable.Projects
             this.EndDateSearch.CustomFormat = "yyyy-MM-dd";
             this.EndDateSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDateSearch.Location = new System.Drawing.Point(899, 58);
+            this.EndDateSearch.Location = new System.Drawing.Point(318, 49);
             this.EndDateSearch.Name = "EndDateSearch";
             this.EndDateSearch.Size = new System.Drawing.Size(135, 26);
             this.EndDateSearch.TabIndex = 53;
@@ -452,7 +452,7 @@ namespace TimeTable.Projects
             // 
             // CancelSearchButton
             // 
-            this.CancelSearchButton.Location = new System.Drawing.Point(1116, 58);
+            this.CancelSearchButton.Location = new System.Drawing.Point(535, 49);
             this.CancelSearchButton.Name = "CancelSearchButton";
             this.CancelSearchButton.Size = new System.Drawing.Size(70, 23);
             this.CancelSearchButton.TabIndex = 57;
@@ -465,7 +465,7 @@ namespace TimeTable.Projects
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1190, 615);
+            this.ClientSize = new System.Drawing.Size(1190, 622);
             this.Controls.Add(this.CancelSearchButton);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.StartDateSearch);
