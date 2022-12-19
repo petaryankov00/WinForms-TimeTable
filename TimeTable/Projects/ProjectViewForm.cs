@@ -24,15 +24,51 @@ namespace TimeTable.Projects
 
         private void ProjectViewForm_Load(object sender, EventArgs e)
         {
-            SearchButton_Click(sender, e);
+            CancelSearchButton_Click(sender, e);
             this.EditButton.Enabled = false;
             this.ReportMonthButton.Enabled = false;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT PROJECT_ID as ID,PROJECT_NAME as NAME, PROJECT_BEGIN as [Begin], PROJECT_END as [End],PROJECT_DESCRIPTION as [Description],PROJECT_STATUS as [Status],PROJECT_MAXHOURS as [Max hours] FROM PROJECT WHERE PROJECT_NAME LIKE '%"
-                + SearchBox.Text + "%' OR PROJECT_DESCRIPTION LIKE '%" + SearchBox.Text + "%' OR PROJECT_STATUS LIKE '%" + SearchBox.Text + "%'";
+            string sql = "SELECT PROJECT_ID as ID,PROJECT_NAME as NAME, PROJECT_BEGIN as [Begin], PROJECT_END as [End],PROJECT_DESCRIPTION as [Description],PROJECT_STATUS as [Status],PROJECT_MAXHOURS as [Max hours] FROM PROJECT ";
+
+            int counter = 0;
+
+            if (!String.IsNullOrWhiteSpace(NameSearch.Text))
+            {
+                sql += $" WHERE PROJECT_NAME LIKE '%{NameSearch.Text}%'";
+
+                counter++;
+            }
+
+            if (!String.IsNullOrWhiteSpace(StartDateSearch.Text))
+            {
+                if (counter != 0)
+                {
+                    sql += $" AND PROJECT_BEGIN >= '{StartDateSearch.Text}'";
+                }
+                else
+                {
+                    sql += $" wHERE PROJECT_BEGIN >= '{StartDateSearch.Text}'";
+                }
+
+                counter++;
+            }
+
+            if (!String.IsNullOrWhiteSpace(EndDateSearch.Text))
+            {
+                if (counter != 0)
+                {
+                    sql += $" AND PROJECT_END >= '{EndDateSearch.Text}'";
+                }
+                else
+                {
+                    sql += $" wHERE PROJECT_END >= '{EndDateSearch.Text}'";
+                }
+
+                counter++;
+            }
 
             config.Load_DTG(sql, AllProjectsGridView);
         }
@@ -165,6 +201,26 @@ namespace TimeTable.Projects
                     MessageBox.Show("Unable to report month. Please contact administrator");
                 }
             }
+        }
+
+        private void CancelSearchButton_Click(object sender, EventArgs e)
+        {
+            this.NameSearch.Text = "";
+            this.StartDateSearch.Format = DateTimePickerFormat.Custom;
+            this.StartDateSearch.CustomFormat = " ";
+            this.EndDateSearch.Format = DateTimePickerFormat.Custom;
+            this.EndDateSearch.CustomFormat = " ";
+            SearchButton_Click(sender, e);
+        }
+
+        private void StartDateSearch_ValueChanged(object sender, EventArgs e)
+        {
+            this.StartDateSearch.Format = DateTimePickerFormat.Short;
+        }
+
+        private void EndDateSearch_ValueChanged(object sender, EventArgs e)
+        {
+            this.EndDateSearch.Format = DateTimePickerFormat.Short;
         }
     }
 }

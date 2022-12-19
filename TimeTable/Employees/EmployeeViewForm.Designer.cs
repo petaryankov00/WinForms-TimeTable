@@ -45,7 +45,6 @@ namespace TimeTable.Employees
             this.EmployeeDetailsLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AllEmployeesGridView = new System.Windows.Forms.DataGridView();
-            this.SearchBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddWorkedTimeButton = new System.Windows.Forms.Button();
@@ -58,6 +57,13 @@ namespace TimeTable.Employees
             this.CancelButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ViewProjectsButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.SearchDateTime = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.SearchPositionBox = new System.Windows.Forms.ComboBox();
+            this.SearchNameTextBox = new System.Windows.Forms.TextBox();
+            this.CancelSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AllEmployeesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkedHoursGridView)).BeginInit();
             this.SuspendLayout();
@@ -185,7 +191,7 @@ namespace TimeTable.Employees
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(716, 31);
+            this.label1.Location = new System.Drawing.Point(706, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 25);
@@ -220,22 +226,13 @@ namespace TimeTable.Employees
             this.AllEmployeesGridView.ReadOnly = true;
             this.AllEmployeesGridView.RowHeadersWidth = 51;
             this.AllEmployeesGridView.ShowEditingIcon = false;
-            this.AllEmployeesGridView.Size = new System.Drawing.Size(523, 174);
+            this.AllEmployeesGridView.Size = new System.Drawing.Size(566, 174);
             this.AllEmployeesGridView.TabIndex = 30;
             this.AllEmployeesGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AllEmployeesGridView_CellContentClick);
             // 
-            // SearchBox
-            // 
-            this.SearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBox.Location = new System.Drawing.Point(520, 73);
-            this.SearchBox.Margin = new System.Windows.Forms.Padding(2);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(451, 23);
-            this.SearchBox.TabIndex = 32;
-            // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(975, 73);
+            this.SearchButton.Location = new System.Drawing.Point(954, 69);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(2);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(68, 23);
@@ -398,12 +395,105 @@ namespace TimeTable.Employees
             this.ViewProjectsButton.UseVisualStyleBackColor = true;
             this.ViewProjectsButton.Click += new System.EventHandler(this.ViewProjectsButton_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(517, 49);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 17);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Full Name";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(812, 50);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 17);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "Start date";
+            // 
+            // SearchDateTime
+            // 
+            this.SearchDateTime.CustomFormat = "\"\"";
+            this.SearchDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.SearchDateTime.Location = new System.Drawing.Point(814, 69);
+            this.SearchDateTime.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchDateTime.Name = "SearchDateTime";
+            this.SearchDateTime.Size = new System.Drawing.Size(136, 26);
+            this.SearchDateTime.TabIndex = 47;
+            this.SearchDateTime.ValueChanged += new System.EventHandler(this.SearchDateTime_ValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(684, 49);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 17);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "Position";
+            // 
+            // SearchPositionBox
+            // 
+            this.SearchPositionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.SearchPositionBox.FormattingEnabled = true;
+            this.SearchPositionBox.Items.AddRange(new object[] {
+            ".NET",
+            "Java",
+            "HR",
+            "QA"});
+            this.SearchPositionBox.Location = new System.Drawing.Point(687, 68);
+            this.SearchPositionBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchPositionBox.Name = "SearchPositionBox";
+            this.SearchPositionBox.Size = new System.Drawing.Size(110, 32);
+            this.SearchPositionBox.TabIndex = 49;
+            // 
+            // SearchNameTextBox
+            // 
+            this.SearchNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchNameTextBox.Location = new System.Drawing.Point(520, 68);
+            this.SearchNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchNameTextBox.Name = "SearchNameTextBox";
+            this.SearchNameTextBox.Size = new System.Drawing.Size(147, 30);
+            this.SearchNameTextBox.TabIndex = 51;
+            // 
+            // CancelSearchButton
+            // 
+            this.CancelSearchButton.Location = new System.Drawing.Point(1026, 68);
+            this.CancelSearchButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CancelSearchButton.Name = "CancelSearchButton";
+            this.CancelSearchButton.Size = new System.Drawing.Size(60, 23);
+            this.CancelSearchButton.TabIndex = 52;
+            this.CancelSearchButton.Text = "Cancel";
+            this.CancelSearchButton.UseVisualStyleBackColor = true;
+            this.CancelSearchButton.Click += new System.EventHandler(this.CancelSearchButton_Click);
+            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1097, 559);
+            this.Controls.Add(this.CancelSearchButton);
+            this.Controls.Add(this.SearchNameTextBox);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.SearchPositionBox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.SearchDateTime);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.ViewProjectsButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.WorkedHoursGridView);
@@ -416,7 +506,6 @@ namespace TimeTable.Employees
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.AllEmployeesGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EmployeeDetailsLabel);
@@ -454,7 +543,6 @@ namespace TimeTable.Employees
         private System.Windows.Forms.Label EmployeeDetailsLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView AllEmployeesGridView;
-        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button AddWorkedTimeButton;
@@ -467,5 +555,12 @@ namespace TimeTable.Employees
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button ViewProjectsButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker SearchDateTime;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox SearchPositionBox;
+        private System.Windows.Forms.TextBox SearchNameTextBox;
+        private System.Windows.Forms.Button CancelSearchButton;
     }
 }

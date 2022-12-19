@@ -35,13 +35,46 @@ namespace TimeTable.Employees
 
         private void EmployeeViewForm_Load(object sender, EventArgs e)
         {
-            SearchButton_Click(sender, e);
+            CancelSearchButton_Click(sender, e);
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT EMPLOYEE_ID as ID,EMPLOYEE_EGN as EGN, EMPLOYEE_NAME as [First Name], EMPLOYEE_SURNAME as [Middle Name],EMPLOYEE_LASTNAME as [Last Name],EMPLOYEE_POSITION as [Position],EMPLOYEE_HIREDATE as [Start Date] FROM EMPLOYEES WHERE EMPLOYEE_EGN LIKE '%"
-                + SearchBox.Text + "%' OR CONCAT(EMPLOYEE_NAME, ' ',EMPLOYEE_SURNAME, ' ',EMPLOYEE_LASTNAME) LIKE '%" + SearchBox.Text + "%' OR EMPLOYEE_POSITION LIKE '%" + SearchBox.Text + "%'";
+            int counter = 0;
+            string sql = "SELECT EMPLOYEE_ID as ID,EMPLOYEE_EGN as EGN, EMPLOYEE_NAME as [First Name], EMPLOYEE_SURNAME as [Middle Name],EMPLOYEE_LASTNAME as [Last Name],EMPLOYEE_POSITION as [Position],EMPLOYEE_HIREDATE as [Start Date] FROM EMPLOYEES ";
+            if (!String.IsNullOrWhiteSpace(SearchNameTextBox.Text))
+            {
+               sql += $" WHERE CONCAT(EMPLOYEE_NAME, ' ',EMPLOYEE_SURNAME, ' ',EMPLOYEE_LASTNAME) LIKE '%{SearchNameTextBox.Text}%'";
+               counter++;
+            }
+
+            if (!String.IsNullOrWhiteSpace(SearchPositionBox.Text))
+            {
+                if (counter != 0)
+                {
+                    sql += $" AND EMPLOYEE_POSITION LIKE '%{SearchPositionBox.Text}%'";
+                }
+                else
+                {
+                    sql += $" WHERE EMPLOYEE_POSITION LIKE '%{SearchPositionBox.Text}%'";
+                }
+
+                counter++;
+            }
+
+            if (!String.IsNullOrWhiteSpace(SearchDateTime.Text))
+            {
+                if (counter != 0)
+                {
+                    sql += $" AND EMPLOYEE_HIREDATE = '{SearchDateTime.Text}'";
+                }
+                else
+                {
+                    sql += $" WHERE EMPLOYEE_HIREDATE = '{SearchDateTime.Text}'";
+                }
+
+                counter++;
+            }
 
             config.Load_DTG(sql, AllEmployeesGridView);
         }
@@ -150,6 +183,20 @@ namespace TimeTable.Employees
                 childForm.StartPosition = FormStartPosition.CenterScreen;
                 childForm.Show();
             }
+        }
+
+        private void SearchDateTime_ValueChanged(object sender, EventArgs e)
+        {
+            this.SearchDateTime.Format = DateTimePickerFormat.Short;
+        }
+
+        private void CancelSearchButton_Click(object sender, EventArgs e)
+        {
+            this.SearchNameTextBox.Text = "";
+            this.SearchPositionBox.Text = "";
+            this.SearchDateTime.Format = DateTimePickerFormat.Custom;
+            this.SearchDateTime.CustomFormat = " ";
+            SearchButton_Click(sender, e);
         }
     }
 }
